@@ -73,6 +73,7 @@ def main():
     
     assert n_html_subdirectory > 1
     assert n_latest_html_per_company > 1
+    assert period_begin < period_end
     
     # load company_list
     with open(company_path, encoding='utf-8') as f:
