@@ -23,7 +23,7 @@ def main():
     paths = (glob('{}/*.html'.format(html_directory)) 
              + glob('{}/*/*.html'.format(html_directory)))
 
-    entries = {'{}--{}'.format(*parse_idx_date(path, date_type)) for path in paths}
+    entries = {'{}\t{}'.format(*parse_idx_date(path, date_type)) for path in paths}
 
     with open(table_path, 'w', encoding='utf-8') as f:
         for entry in entries:
