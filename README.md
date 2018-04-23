@@ -43,3 +43,29 @@ Arguments
 | --period_begin | '2017-01-01' | begin of filling date |
 | --period_end | '2018-01-01' | end of filling date |
 | --debug | False | if you use --debug, then activate debug mode |
+
+
+## Draw empty table
+
+Row corresponds (company, date). Two columns are separated with tap.
+
+### Scripts
+
+Python 3 script
+
+	python draw_table.py --date_type yy
+	python draw_table.py --date_type yy-mm
+	python draw_table.py --date_type yy-mm-dd
+
+	python draw_table.py --date_type yy --table_path MY_DIRECTORY/TABLE.TXT
+
+	python draw_table.py --html_directory MY_HTMLDIRECTORY
+
+Arguments
+
+| argument | default value | description |
+| --- | --- | --- |
+| --html_directory | './tmp/' | directory for saving html |
+| --table_path | './empty_table.txt' | table file path |
+| --date_type | 'yy' | choices = [yy, yy-mm, yy-mm-dd] |
+| --debug | False | nothing |
