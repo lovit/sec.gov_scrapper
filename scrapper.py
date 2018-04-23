@@ -61,7 +61,7 @@ def main():
     parser.add_argument('--period_begin', type=str, default='2017-01-01')
     parser.add_argument('--period_end', type=str, default='2018-01-01')
     parser.add_argument('--debug', dest='debug', action='store_true')
-    
+
     args = parser.parse_args()
     company_path = args.company_path    
     html_directory = args.html_directory    
@@ -70,11 +70,10 @@ def main():
     period_begin = args.period_begin
     period_end = args.period_end
     debug = args.debug
-    
-    assert n_html_subdirectory > 1
+
     assert n_latest_html_per_company > 1
     assert period_begin < period_end
-    
+
     # load company_list
     with open(company_path, encoding='utf-8') as f:
         # skip head
@@ -83,15 +82,19 @@ def main():
 
     company_list = [line.split('\t') for line in company]
     company_list = [line for line in company_list if line[2] != '']
-    
+
     # create html tmp subdirectories
-    for i in range(n_html_subdirectory):
-        if not os.path.exists('{}/{}/'.format(html_directory, i)):
-            os.makedirs('{}/{}/'.format(html_directory, i))
+    if n_html_subdirectory > 0:
+        for i in range(n_html_subdirectory):
+            if not os.path.exists('{}/{}/'.format(html_directory, i)):
+                os.makedirs('{}/{}/'.format(html_directory, i))
+    else:
+        if not os.path.exists('{}/'.format(html_directory)):
+            os.makedirs('{}/'.format(html_directory))
 
     # main
     for num_company, company in enumerate(company_list):        
-        if debug and num_company >= 10:
+        if debug and num_company >= 30:
             break
         if num_company == 0:
             print('begin scrapper')
@@ -139,7 +142,10 @@ def main():
                 if dps_html_source == None:
                     continue
 
-                company_folder = num_company % 20
+                if n_html_subdirectory > 0:
+                    company_folder = num_company % n_html_subdirectory
+                else:
+                    company_folder = ''
 
                 dps_html_fname = '{}/{}/{}_{}.html'.format(html_directory, company_folder, company_id, filling_date)
                 with open(dps_html_fname, 'w', encoding='utf-8') as f:
