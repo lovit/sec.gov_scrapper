@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--html_directory', type=str, default='./tmp/')
     parser.add_argument('--table_path', type=str, default='./empty_table.txt')    
-    parser.add_argument('--date_type', choices=['yy', 'yy-mm', 'yy-mm-dd'], default='yy')
+    parser.add_argument('--date_type', choices=['yy', 'yy-mm', 'yy-mm-dd'], default='yy-mm-dd')
     parser.add_argument('--debug', dest='debug', action='store_true')
 
     args = parser.parse_args()
