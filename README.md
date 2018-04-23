@@ -53,12 +53,8 @@ Row corresponds (company, date). Two columns are separated with tap.
 
 Python 3 script
 
-	python draw_table.py --date_type yy
-	python draw_table.py --date_type yy-mm
-	python draw_table.py --date_type yy-mm-dd
-
-	python draw_table.py --date_type yy --table_path MY_DIRECTORY/TABLE.TXT
-
+	python draw_table.py
+	python draw_table.py --table_path MY_DIRECTORY/TABLE.TXT
 	python draw_table.py --html_directory MY_HTMLDIRECTORY
 
 Arguments
