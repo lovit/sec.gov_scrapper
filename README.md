@@ -63,7 +63,7 @@ Arguments
 | --- | --- | --- |
 | --html_directory | './tmp/' | directory for saving html |
 | --table_path | './empty_table.txt' | table file path |
-| --date_type | 'yy' | choices = [yy, yy-mm, yy-mm-dd] |
+| --date_type | 'yy-mm-dd' | choices = [yy, yy-mm, yy-mm-dd] |
 | --debug | False | nothing |
 
 
