@@ -65,3 +65,22 @@ Arguments
 | --table_path | './empty_table.txt' | table file path |
 | --date_type | 'yy' | choices = [yy, yy-mm, yy-mm-dd] |
 | --debug | False | nothing |
+
+
+## Draw empty txt file
+
+Empty text file generator.
+
+### Scripts
+
+Python 3 script
+
+	python draw_empty_file.py
+
+Arguments
+
+| argument | default value | description |
+| --- | --- | --- |
+| --html_directory | './tmp/' | directory of html files |
+| --txt_directory | './txt/' | directory of text files |
+| --debug | False | debug mode on |
