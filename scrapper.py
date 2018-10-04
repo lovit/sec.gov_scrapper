@@ -55,7 +55,7 @@ step1_base_url = 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--company_path', type=str, default='company_list')
-    parser.add_argument('--html_directory', type=str, default='./tmp/')
+    parser.add_argument('--html_directory', type=str, default='./html/')
     parser.add_argument('--n_html_subdirectory', type=int, default=20)
     parser.add_argument('--n_latest_html_per_company', type=int, default=10)
     parser.add_argument('--period_begin', type=str, default='2017-01-01')
